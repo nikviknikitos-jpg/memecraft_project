@@ -1,4 +1,3 @@
-
 package com.example.memecraft.entities;
 
 import com.example.memecraft.MemeCraft;
@@ -7,7 +6,6 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -21,7 +19,7 @@ public class ModEntities {
             FabricEntityTypeBuilder.<VoidAnomalyEntity>create(SpawnGroup.MISC, VoidAnomalyEntity::new)
                     .dimensions(EntityDimensions.fixed(5.0f, 5.0f)).build());
 
-        public static final EntityType<AnomalyMinionEntity> ANOMALY_MINION = Registry.register(Registries.ENTITY_TYPE, new Identifier("memecraft", "anomaly_minion"),
+    public static final EntityType<AnomalyMinionEntity> ANOMALY_MINION = Registry.register(Registries.ENTITY_TYPE, new Identifier("memecraft", "anomaly_minion"),
             FabricEntityTypeBuilder.<AnomalyMinionEntity>createMob().spawnGroup(SpawnGroup.MISC).entityFactory(AnomalyMinionEntity::new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
 
     public static final EntityType<HamsterEntity> HAMSTER = Registry.register(Registries.ENTITY_TYPE, new Identifier("memecraft", "hamster"),
@@ -41,7 +39,6 @@ public class ModEntities {
 
     public static final net.minecraft.item.Item ANOMALY_SPAWNER_EGG = new net.minecraft.item.Item(new net.minecraft.item.Item.Settings()) {
         @Override
-            public static final net.minecraft.item.Item HAMSTER_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(HAMSTER, 0xD2691E, 0xFFF8DC, new net.minecraft.item.Item.Settings());
         public net.minecraft.util.ActionResult useOnBlock(net.minecraft.item.ItemUsageContext context) {
             if (!context.getWorld().isClient) {
                 VoidAnomalyEntity anomaly = new VoidAnomalyEntity(VOID_ANOMALY, context.getWorld());
@@ -52,6 +49,8 @@ public class ModEntities {
             return net.minecraft.util.ActionResult.SUCCESS;
         }
     };
+
+    public static final net.minecraft.item.Item HAMSTER_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(HAMSTER, 0xD2691E, 0xFFF8DC, new net.minecraft.item.Item.Settings());
     public static final net.minecraft.item.Item BEGGAR_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(BEGGAR, 0x8B4513, 0xD2B48C, new net.minecraft.item.Item.Settings());
     public static final net.minecraft.item.Item MONKEY_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(MONKEY, 0x8B4513, 0xFFFF00, new net.minecraft.item.Item.Settings());
     public static final net.minecraft.item.Item WORM_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(WORM, 0xFF00FF, 0x000000, new net.minecraft.item.Item.Settings());
@@ -65,7 +64,7 @@ public class ModEntities {
         Registry.register(Registries.ITEM, new Identifier(MemeCraft.MOD_ID, "worm_spawn_egg"), WORM_SPAWN_EGG);
         Registry.register(Registries.ITEM, new Identifier(MemeCraft.MOD_ID, "mimic_spawn_egg"), MIMIC_SPAWN_EGG);
 
-        // ПРАВИЛО 9: Атрибуты ТОЛЬКО для LivingEntity
+        // Атрибуты ТОЛЬКО для LivingEntity
         FabricDefaultAttributeRegistry.register(HAMSTER, HamsterEntity.createHamsterAttributes());
         FabricDefaultAttributeRegistry.register(BEGGAR, BeggarEntity.createBeggarAttributes());
         FabricDefaultAttributeRegistry.register(MONKEY, BananaMonkeyEntity.createMonkeyAttributes());
