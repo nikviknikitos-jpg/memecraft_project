@@ -41,6 +41,7 @@ public class ModEntities {
 
     public static final net.minecraft.item.Item ANOMALY_SPAWNER_EGG = new net.minecraft.item.Item(new net.minecraft.item.Item.Settings()) {
         @Override
+            public static final net.minecraft.item.Item HAMSTER_SPAWN_EGG = new net.minecraft.item.SpawnEggItem(HAMSTER, 0xD2691E, 0xFFF8DC, new net.minecraft.item.Item.Settings());
         public net.minecraft.util.ActionResult useOnBlock(net.minecraft.item.ItemUsageContext context) {
             if (!context.getWorld().isClient) {
                 VoidAnomalyEntity anomaly = new VoidAnomalyEntity(VOID_ANOMALY, context.getWorld());
