@@ -5,7 +5,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 public class PhoneScreen extends Screen {
     private int clicks = 0;
-    protected PhoneScreen() { super(Text.literal("RK Phone")); }
+    public PhoneScreen() { super(Text.literal("RK Phone")); }
     @Override protected void init() {
         this.addDrawableChild(net.minecraft.client.gui.widget.ButtonWidget.builder(Text.literal("Обновить страницу"), button -> {
             clicks++;
