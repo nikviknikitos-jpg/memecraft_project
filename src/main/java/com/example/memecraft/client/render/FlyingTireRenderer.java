@@ -5,6 +5,6 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 public class FlyingTireRenderer extends EntityRenderer<FlyingTireEntity> {
-    protected FlyingTireRenderer(EntityRendererFactory.Context ctx) { super(ctx); }
+    public FlyingTireRenderer(EntityRendererFactory.Context ctx) { super(ctx); }
     @Override public Identifier getTexture(FlyingTireEntity entity) { return new Identifier("memecraft:item/tire_item"); }
 }
