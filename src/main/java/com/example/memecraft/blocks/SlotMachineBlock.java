@@ -1,5 +1,6 @@
 
 package com.example.memecraft.blocks;
+import net.minecraft.util.math.BlockPos;
 import com.example.memecraft.blockentity.SlotMachineBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
